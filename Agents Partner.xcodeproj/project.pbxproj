@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		17E5F2821BAEC74100D5B05F /* Specimen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E5F2811BAEC74100D5B05F /* Specimen.swift */; };
+		9FAB43DF1D2C7F0000336889 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FAB43DE1D2C7F0000336889 /* Category.swift */; };
 		A2CFDA981B6A9788007F3C15 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CFDA961B6A9788007F3C15 /* LogViewController.swift */; };
 		A2CFDA991B6A9788007F3C15 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CFDA971B6A9788007F3C15 /* MapViewController.swift */; };
 		A2CFDA9B1B6A9790007F3C15 /* LogCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CFDA9A1B6A9790007F3C15 /* LogCell.swift */; };
@@ -47,6 +48,7 @@
 		21FE1CA47EBA7505FDBB5DF3 /* Pods_Agents_Partner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Agents_Partner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CF3D599BC74410F7655959C /* Pods-Agents Partner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agents Partner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Agents Partner/Pods-Agents Partner.release.xcconfig"; sourceTree = "<group>"; };
 		726108A4CD6BAE3E890A00E2 /* Pods-Agents Partner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agents Partner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Agents Partner/Pods-Agents Partner.debug.xcconfig"; sourceTree = "<group>"; };
+		9FAB43DE1D2C7F0000336889 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = SOURCE_ROOT; };
 		A2CFDA961B6A9788007F3C15 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogViewController.swift; path = AgentsPartner/LogViewController.swift; sourceTree = SOURCE_ROOT; };
 		A2CFDA971B6A9788007F3C15 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = AgentsPartner/MapViewController.swift; sourceTree = SOURCE_ROOT; };
 		A2CFDA9A1B6A9790007F3C15 /* LogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogCell.swift; path = AgentsPartner/LogCell.swift; sourceTree = SOURCE_ROOT; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				17E5F2811BAEC74100D5B05F /* Specimen.swift */,
+				9FAB43DE1D2C7F0000336889 /* Category.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				A2CFDA981B6A9788007F3C15 /* LogViewController.swift in Sources */,
 				A2CFDAA81B6A97E1007F3C15 /* SpecimenAnnotation.swift in Sources */,
 				A2CFDA991B6A9788007F3C15 /* MapViewController.swift in Sources */,
+				9FAB43DF1D2C7F0000336889 /* Category.swift in Sources */,
 				17E5F2821BAEC74100D5B05F /* Specimen.swift in Sources */,
 				A2CFDA9B1B6A9790007F3C15 /* LogCell.swift in Sources */,
 				A2CFDA9D1B6A979C007F3C15 /* CategoriesTableViewController.swift in Sources */,
