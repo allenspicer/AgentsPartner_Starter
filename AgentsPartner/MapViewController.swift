@@ -35,6 +35,8 @@ class MapViewController: UIViewController {
   var locationManager = CLLocationManager()
   var userLocated = false
   var lastAnnotation: MKAnnotation!
+    
+    var specimens = try! Realm().objects(Specimen)
   
   //MARK: - Helper Methods
   
@@ -104,6 +106,22 @@ class MapViewController: UIViewController {
     lastAnnotation = nil
   }
   
+    func populateMap() {
+        mapView.removeAnnotations(mapView.annotations) // 1
+        
+        specimens = try! Realm().objects(Specimen) // 2
+        
+        // Create annotations for each one
+        for specimen in specimens { // 3
+            let coord = CLLocationCoordinate2D(latitude: specimen.latitude, longitude: specimen.longitude);
+            let specimenAnnotation = SpecimenAnnotation(coordinate: coord,
+                                                        title: specimen.name,
+                                                        subtitle: specimen.category.name,
+                                                        specimen: specimen)
+            mapView.addAnnotation(specimenAnnotation) // 4
+        }
+    }
+
 }
 
 //MARK: - CLLocationManager Delegate
