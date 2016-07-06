@@ -28,6 +28,7 @@ class CategoriesTableViewController: UITableViewController {
   
     let realm = try! Realm()
     lazy var categories: Results<Category> = { self.realm.objects(Category) }()
+    var selectedCategory: Category!
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -70,14 +71,17 @@ extension CategoriesTableViewController {
     return categories.count
   }
   
-  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath) 
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CategoryCell", forIndexPath: indexPath)
+        
+        let category = categories[indexPath.row]
+        cell.textLabel?.text = category.name
+        
+        return cell
+    }
     
-    return cell
-  }
-    
-  override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath {
-    
-    return indexPath
-  }
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath {
+        selectedCategory = categories[indexPath.row]
+        return indexPath
+    }
 }
