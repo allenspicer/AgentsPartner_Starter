@@ -29,5 +29,6 @@ class Specimen: Object {
     dynamic var latitude = 0.0
     dynamic var longitude = 0.0
     dynamic var created = NSDate()
+    dynamic var category: Category!
     
 }
