@@ -78,6 +78,7 @@ class MapViewController: UIViewController {
     } else {
       locationManager.startUpdatingLocation()
     }
+    populateMap()
   }
   
   //MARK: - Actions & Segues
@@ -98,13 +99,30 @@ class MapViewController: UIViewController {
     }
   }
   
-  @IBAction func unwindFromAddNewEntry(segue: UIStoryboardSegue) {
-    if let lastAnnotation = lastAnnotation {
-      mapView.removeAnnotation(lastAnnotation)
+    @IBAction func unwindFromAddNewEntry(segue: UIStoryboardSegue) {
+        
+        let addNewEntryController = segue.sourceViewController as! AddNewEntryController
+        let addedSpecimen = addNewEntryController.specimen
+        let addedSpecimenCoordinate = CLLocationCoordinate2D(latitude: addedSpecimen.latitude, longitude: addedSpecimen.longitude)
+        
+        if let lastAnnotation = lastAnnotation {
+            mapView.removeAnnotation(lastAnnotation)
+        } else {
+            for annotation in mapView.annotations {
+                if let currentAnnotation = annotation as? SpecimenAnnotation {
+                    if currentAnnotation.coordinate.latitude == addedSpecimenCoordinate.latitude && currentAnnotation.coordinate.longitude == addedSpecimenCoordinate.longitude {
+                        mapView.removeAnnotation(currentAnnotation)
+                        break
+                    }
+                }
+            }
+        }
+        
+        let annotation = SpecimenAnnotation(coordinate: addedSpecimenCoordinate, title: addedSpecimen.name, subtitle: addedSpecimen.category.name, specimen: addedSpecimen)
+        
+        mapView.addAnnotation(annotation)
+        lastAnnotation = nil;
     }
-    
-    lastAnnotation = nil
-  }
   
     func populateMap() {
         mapView.removeAnnotations(mapView.annotations) // 1
